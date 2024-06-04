@@ -17,9 +17,9 @@ add_button.addEventListener("click", (e) => {
 })
 
 input.addEventListener("keydown", (e) => {
-    e.preventDefault();
+    console.log(e);
     let body = input.value;
-    if (e.key === "Enter") {
+    if (e.key === "Enter" && body != "") {
         input.value = "";
         let note_index = saveNewNote(body);
         createNote(body, note_index);
