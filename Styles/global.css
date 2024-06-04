@@ -1,0 +1,47 @@
+/* Color themes */ /* + Appearance */
+:root {
+    /* Theme colors */
+    --primary-bg: #fff;
+    --menu-bg: #eee;
+    --color: #000;
+    /* Color mixing */
+    --darken: #000;
+    --lighten: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+        /* Theme colors */
+        --primary-bg: #111;
+        --menu-bg: #222;
+        --color: #fff;
+        /* Color mixing */
+        --darken: #fff;
+        --lighten: #000;
+    }
+}
+
+body {
+    background-color: var(--primary-bg);
+    color: var(--color);
+    font-family: sans-serif;
+}
+
+/* Responsive design */
+body {
+    margin: 0;
+    padding: .5ch 20%;
+}
+
+@media (aspect-ratio < 5 / 3) {
+    body {
+        padding-inline: 10ch;
+    }
+}
+
+@media (aspect-ratio < 1) OR (width < 30ch) {
+    body {
+        padding-inline: .5ch;
+    }
+}

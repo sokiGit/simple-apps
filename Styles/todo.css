@@ -1,0 +1,97 @@
+/* Layout */
+body {
+    padding-block: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Adding notes */
+#add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & > input, & > button {
+        box-sizing: border-box;
+        border: none;
+        height: 2rem;
+        background-color: var(--menu-bg);
+    }
+}
+
+#add-input {
+    border-top-left-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+    padding: 1ch;
+    z-index: 1; /* fixes outline under add button */ /* all other things are broken when selected with tab */
+}
+
+#add-button {
+    border-top-right-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    aspect-ratio: 1;
+    cursor: pointer;
+    position: relative;
+    &:before {
+        content: '';
+        height: calc(100% - 1ch);
+        position: absolute;
+        width: 1px;
+        top: .5ch;
+        left: 0;
+        background-color: color-mix(in srgb, var(--darken) 15%, transparent);
+    }
+    &:hover {
+        background-color: color-mix(in srgb, var(--darken) 5%, var(--menu-bg));
+    }
+}
+
+/* Notes */
+#notes {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.note {
+    background-color: var(--menu-bg);
+    display: grid;
+    grid-template-columns: auto 4em;
+    min-height: calc(1.5rem + 2ch);
+    border-radius: .5rem;
+    &[data-finished="1"] {
+        background-color: color-mix(in srgb, var(--menu-bg) 75%, var(--lighten));
+        & > .note-body {
+            color: color-mix(in srgb, var(--color) 60%, var(--lighten));
+            text-decoration: line-through;
+        }
+    }
+}
+
+.note-body {
+    padding: 1ch;
+    display: flex;
+    align-items: center;
+    word-break: break-all;
+}
+
+.note-controls {
+    display: flex;
+    flex-direction: column;
+    & > button {
+        background-color: color-mix(in srgb, var(--darken) 5%, transparent);
+        border: none;
+        border-radius: 0;
+        height: 50%;
+        cursor: pointer;
+        &:first-child {
+            border-top-right-radius: .5rem;
+        }
+        &:last-child {
+            border-bottom-right-radius: .5rem;
+        }
+        &:hover {
+            background-color: color-mix(in srgb, var(--darken) 10%, transparent);
+        }
+    }
+}
