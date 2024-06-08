@@ -1,0 +1,43 @@
+h1 {
+    font-weight: 100;
+    text-align: center;
+    position: relative;
+    &::after {
+        content: '';
+        width: 90%;
+        height: 1px;
+        position: absolute;
+        bottom: -.5ch;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #fff1;
+    }
+}
+
+ul {
+    padding: 0;
+    margin: 1rem;
+    li {
+        background: var(--menu-bg);
+        list-style: none;
+        border-radius: .5rem;
+        transition: background-color .2s, border-color .2s;
+        border: 1px solid #fff0;
+        &:hover {
+            border-color: #fff1;
+            background-color: color-mix(in srgb, var(--menu-bg) 97.5%, var(--darken));
+            }
+        & > a {           
+            padding: .5em;
+            display: grid;
+            grid-template-columns: 2rem auto;
+            align-items: center;
+            gap: 1ch;
+            color: var(--color);
+            text-decoration: none;
+            & > svg {
+                justify-self: center;
+            }
+        }
+    }
+}

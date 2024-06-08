@@ -10,7 +10,7 @@
 <body>
     <section id="add">
         <input id="add-input" type="text" placeholder="Today I will...">
-        <button id="add-button">+</button>
+        <button id="add-button"><svg data-icon="plus"></svg></button>
     </section>
     <section id="notes">
         <!--
@@ -19,12 +19,13 @@
                 Lorem ipsum dolor sit amet...
             </div>
             <div class="note-controls">
-                <button class="note-finish">✔</button>
-                <button class="note-remove">❌</button>
+                <button class="note-finish"><svg data-icon="check"></svg></button>
+                <button class="note-remove"><svg data-icon="delete"></svg></button>
             </div>
         </div>
     -->
     </section>
-    <script src="../Scripts/todo.js"></script>
+    <script src="../Scripts/todo.js" type="module"></script>
+    <script src="../Scripts/global.js" type="module"></script>
 </body>
 </html>

@@ -1,6 +1,9 @@
 /* Layout */
 body {
     padding-block: 2rem;
+    height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -16,6 +19,7 @@ body {
         border: none;
         height: 2rem;
         background-color: var(--menu-bg);
+        transition: background-color .1s ease;
     }
 }
 
@@ -50,7 +54,14 @@ body {
 #notes {
     display: flex;
     flex-direction: column;
+    align-self: stretch;
+    overflow-y: auto;
     gap: 1rem;
+    padding-inline: 1ch;
+    scrollbar-width: thin;
+    &::-webkit-scrollbar {
+        width: 1ch;
+    }
 }
 
 .note {
@@ -59,12 +70,16 @@ body {
     grid-template-columns: auto 4em;
     min-height: calc(1.5rem + 2ch);
     border-radius: .5rem;
+    transition: background-color .2s ease;
     &[data-finished="1"] {
         background-color: color-mix(in srgb, var(--menu-bg) 75%, var(--lighten));
         & > .note-body {
             color: color-mix(in srgb, var(--color) 60%, var(--lighten));
             text-decoration: line-through;
         }
+    }
+    &:not([data-finished="1"]):hover {
+        background-color: color-mix(in srgb, var(--menu-bg) 97.5%, var(--darken));
     }
 }
 
@@ -84,11 +99,18 @@ body {
         border-radius: 0;
         height: 50%;
         cursor: pointer;
+        transition: background-color .1s ease;
         &:first-child {
             border-top-right-radius: .5rem;
+            &:hover {
+                background-color: color-mix(in srgb, color-mix(in srgb, var(--darken) 65%, #0f0) 25%, transparent);
+            }
         }
         &:last-child {
             border-bottom-right-radius: .5rem;
+            &:hover {
+                background-color: color-mix(in srgb, color-mix(in srgb, var(--darken) 65%, #f00) 25%, transparent);
+            }
         }
         &:hover {
             background-color: color-mix(in srgb, var(--darken) 10%, transparent);
