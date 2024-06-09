@@ -41,6 +41,22 @@ body {
     }
 }
 
+/* Icons */
+.icon {
+    height: 1em;
+    width: 1em;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-clip: content-box; /* add padding to create space around */
+    background-image: var(--icon);
+
+    &.delete {--icon: url("/Icons/delete.svg")}
+    &.check {--icon: url("/Icons/check.svg")}
+    &.plus {--icon: url("/Icons/plus.svg")}
+    &.add_task {--icon: url("/Icons/add_task.svg")}
+}
+
 /* Responsive design */
 body {
     margin: 0;

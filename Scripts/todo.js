@@ -1,5 +1,3 @@
-import { parseSvg } from "./Modules/icon-loader.mjs";
-
 const input = document.getElementById("add-input");
 const add_button = document.getElementById("add-button");
 const notes = document.getElementById("notes");
@@ -46,8 +44,7 @@ function createNote(body/*string*/, id/*int*/, finished) {
     
     let note_finish = document.createElement("button");
     note_controls.classList.add("note-finish");
-    note_finish.innerHTML = `<svg data-icon="check"></svg>`;
-    parseSvg(note_finish.getElementsByTagName("svg")[0]);
+    note_finish.innerHTML = `<svg class="icon check"></svg>`;
     note_finish.addEventListener("click", (e) => {
         e.preventDefault();
         let tmp_notes_cache = localStorage.getItem("TODO_NOTES");
@@ -66,8 +63,7 @@ function createNote(body/*string*/, id/*int*/, finished) {
     
     let note_remove = document.createElement("button");
     note_controls.classList.add("note-rmeove");
-    note_remove.innerHTML = `<svg data-icon="delete"></svg>`;
-    parseSvg(note_remove.getElementsByTagName("svg")[0]);
+    note_remove.innerHTML = `<svg class="icon delete"></svg>`;
     note_remove.addEventListener("click", (e) => {
         e.preventDefault();
         let tmp_notes_cache = localStorage.getItem("TODO_NOTES");
