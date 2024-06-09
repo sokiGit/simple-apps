@@ -68,7 +68,7 @@ body {
     background-color: var(--menu-bg);
     display: grid;
     grid-template-columns: auto 4em;
-    min-height: calc(1.5rem + 2ch);
+    min-height: min(calc(1.5rem + 2ch), fit-content);
     border-radius: .5rem;
     transition: background-color .2s ease;
     &[data-finished="1"] {

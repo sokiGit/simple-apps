@@ -51,10 +51,10 @@ body {
     background-clip: content-box; /* add padding to create space around */
     background-image: var(--icon);
 
-    &.delete {--icon: url("/Icons/delete.svg")}
-    &.check {--icon: url("/Icons/check.svg")}
-    &.plus {--icon: url("/Icons/plus.svg")}
-    &.add_task {--icon: url("/Icons/add_task.svg")}
+    &.delete {--icon: url(../Icons/delete.svg)}
+    &.check {--icon: url(../Icons/check.svg)}
+    &.plus {--icon: url(../Icons/plus.svg)}
+    &.add_task {--icon: url(../Icons/add_task.svg)}
 }
 
 /* Responsive design */
