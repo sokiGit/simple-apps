@@ -1,0 +1,31 @@
+body {
+    display: flex;
+    flex-flow: column;
+    gap: 1rem;
+    margin-block: 1rem;
+}
+
+section {
+    width: 100%;
+}
+
+.controls {
+    background-color: var(--menu-bg);
+    border-radius: .5rem;
+    padding: .5rem;
+}
+
+.timer-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.timer-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+#timer {
+    font-size: 5rem;
+}

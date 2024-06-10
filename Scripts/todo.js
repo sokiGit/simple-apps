@@ -64,8 +64,9 @@ function createNote(body/*string*/, id/*int*/, finished) {
     note_controls.classList.add("note-rmeove");
     note_remove.innerHTML = `<svg class="icon delete"></svg>`;
     note_remove.addEventListener("click", (e) => {
-        //delete cache[DATA_KEY][id]; /* huh??? what is this sorcery */
-        let len = Object.keys(cache[DATA_KEY]).length + 1;
+        delete cache[DATA_KEY][id]; /* huh??? what is this sorcery */
+        //TODO: FIX
+        /*let len = Object.keys(cache[DATA_KEY]).length + 1;
         console.log("Removing data at index "+id+", length = "+len);
         for (let i = id+1; i <= len; i++) {
             console.log("Iterating: "+i+" out of "+len);
@@ -74,7 +75,7 @@ function createNote(body/*string*/, id/*int*/, finished) {
                 console.log("Removing last key! ("+i+")");
                 delete cache[DATA_KEY][i];
             }
-        }
+        }*/
         saveTable(DATA_KEY);
         note.remove();
     })

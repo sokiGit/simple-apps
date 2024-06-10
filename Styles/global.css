@@ -55,6 +55,7 @@ body {
     &.check {--icon: url(../Icons/check.svg)}
     &.plus {--icon: url(../Icons/plus.svg)}
     &.add_task {--icon: url(../Icons/add_task.svg)}
+    &.timelapse {--icon: url(../Icons/timelapse.svg)}
 }
 
 /* Responsive design */
