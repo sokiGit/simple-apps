@@ -30,3 +30,17 @@ section {
     font-size: 5rem;
     
 }
+
+#start-stop {
+    width: 10ch;
+    height: 3rem;
+    background-color: var(--menu-bg);
+    color: var(--color);
+    border: 1px solid #fff0;
+    border-radius: .5rem;
+    cursor: pointer;
+    &:hover {
+        border-color: #fff1;
+        background-color: color-mix(in srgb, var(--menu-bg) 97.5%, var(--darken));
+    }
+}
