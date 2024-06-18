@@ -17,7 +17,7 @@ start_stop.addEventListener("click", () => {
             console.log("Interval");
             remaining_time -= Date.now() - start_time;
             console.log(remaining_time)
-            timer.innerText = toString(remaining_time);
+            timer.innerText = remaining_time.toString();
         }, 100);
     }
 })
